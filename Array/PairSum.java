@@ -22,6 +22,22 @@ public class PairSum {
         }
         return count;
     }
+
+    static int tripletSum(int [] arr,int target){
+        int n= arr.length;
+        int count =0;
+        for(int i=0 ; i<n ;i++){
+            for(int j=i+1 ; j<n ; j++){
+                for(int k=j+1 ;k<n ;k++){
+                    if(arr[i]+arr[j]+arr[k]==target){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the number of elements in the array" );
@@ -35,6 +51,7 @@ public class PairSum {
         int t= sc.nextInt();
 
         System.out.println("Number of pairs in array whose target sum is " + t + " is "+ pairSum(array,t));
+        System.out.println("Number of triplets in array whose target sum is " + t + " is "+ tripletSum(array,t));
         printArray(array);
     }
 }
