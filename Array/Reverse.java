@@ -13,6 +13,24 @@ public class Reverse {
         }
         return rev;
     }
+    static void swap(int[] arr,int i, int j){
+        arr[i]=arr[i]+arr[j];
+        arr[j]=arr[i]-arr[j];
+        arr[i]=arr[i]-arr[j];
+
+    }
+    static void reverseInPlace(int [] arr){
+        int i=0;
+        int j= arr.length-1;
+
+        while(i<j){
+            swap(arr,i,j);
+            i++;
+            j--;
+        }
+
+
+    }
     static void printArray(int[] arr){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i] + " ");
@@ -31,6 +49,7 @@ public class Reverse {
         printArray(array);
 
         System.out.println("Reverse of array is" );
-        printArray(reverse(array));
+        reverseInPlace(array);
+        printArray(array);
     }
 }
