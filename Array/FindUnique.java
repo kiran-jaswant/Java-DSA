@@ -3,7 +3,7 @@ import  java.util.Scanner;
 public class FindUnique {
     static int findUnique(int [] arr) {
         int n = arr.length;
-        int ans = 0;
+
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] == arr[j]) {
@@ -13,9 +13,10 @@ public class FindUnique {
 
             }
         }
+        int ans=0;
         for (int i = 0; i < n; i++) {
             if (arr[i] > 0) {
-                 ans = arr[i];
+                ans = arr[i];
 
             }
         }
